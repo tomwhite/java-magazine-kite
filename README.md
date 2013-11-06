@@ -62,6 +62,17 @@ to create the dataset on the filesystem with the following command:
 mvn exec:java -Dexec.mainClass="com.tom_e_white.javamagazine.CreateDatasets" -Dexec.args="repo:hive"
 ```
 
+or
+
+```bash
+mvn cdk:create-dataset \
+  -Dcdk.datasetName=events \
+  -Dcdk.avroSchemaReflectClass=com.tom_e_white.javamagazine.model.Event
+mvn cdk:create-dataset \
+  -Dcdk.datasetName=summaries \
+  -Dcdk.avroSchemaReflectClass=com.tom_e_white.javamagazine.model.Summary
+```
+
 You can see the dataset directory hierarchy in [`/tmp/data/events`](http://localhost:8888/filebrowser/#/tmp/data/events),
 In particular, the schema for the events is stored in
 [`/tmp/data/events/.metadata/schema.avsc`](http://localhost:8888/filebrowser/#/tmp/data/events/.metadata/schema.avsc).
@@ -112,5 +123,12 @@ Clean up by deleting all the datasets with
 
 ```bash
 mvn exec:java -Dexec.mainClass="com.tom_e_white.javamagazine.DeleteDatasets" -Dexec.args="repo:hive"
+```
+
+or
+
+```bash
+mvn cdk:delete-dataset -Dcdk.datasetName=events
+mvn cdk:delete-dataset -Dcdk.datasetName=summaries
 ```
 
