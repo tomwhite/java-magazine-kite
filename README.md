@@ -59,7 +59,7 @@ The log data ends up in a dataset named "events". Before running the logger we n
 to create the dataset on the filesystem with the following command:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.tom_e_white.javamagazine.CreateDatasets" -Dexec.args="repo:hdfs://localhost.localdomain/tmp/data"
+mvn exec:java -Dexec.mainClass="com.tom_e_white.javamagazine.CreateDatasets" -Dexec.args="repo:hive"
 ```
 
 You can see the dataset directory hierarchy in [`/tmp/data/events`](http://localhost:8888/filebrowser/#/tmp/data/events),
@@ -86,18 +86,25 @@ directions.
 Crunch:
 
 ```bash
-mvn cdk:run-tool -Dcdk.args="repo:hdfs://localhost.localdomain/tmp/data"
+mvn cdk:run-tool -Dcdk.args="repo:hive"
 ```
 
 Inspect summaries:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.tom_e_white.javamagazine.ReadSummaries" -Dexec.args="repo:hdfs://localhost.localdomain/tmp/data"
+mvn exec:java -Dexec.mainClass="com.tom_e_white.javamagazine.ReadSummaries" -Dexec.args="repo:hive"
+```
+
+Use Impala http://localhost:8888/impala/execute/
+
+```
+select source, count(1) from events group by source
+select * from summaries
 ```
 
 Clean up by deleting all the datasets with
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.tom_e_white.javamagazine.DeleteDatasets" -Dexec.args="repo:hdfs://localhost.localdomain/tmp/data"
+mvn exec:java -Dexec.mainClass="com.tom_e_white.javamagazine.DeleteDatasets" -Dexec.args="repo:hive"
 ```
 
