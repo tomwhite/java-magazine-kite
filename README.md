@@ -98,8 +98,14 @@ mvn exec:java -Dexec.mainClass="com.tom_e_white.javamagazine.ReadSummaries" -Dex
 Use Impala http://localhost:8888/impala/execute/
 
 ```
-select source, count(1) from events group by source
-select * from summaries
+SELECT source, COUNT(1) AS cnt FROM events GROUP BY source
+SELECT * FROM summaries
+```
+
+Use JDBC
+
+```bash
+mvn exec:java -Dexec.mainClass="com.tom_e_white.javamagazine.ReadSummariesJdbc"
 ```
 
 Clean up by deleting all the datasets with
