@@ -67,10 +67,10 @@ or
 ```bash
 mvn cdk:create-dataset \
   -Dcdk.datasetName=events \
-  -Dcdk.avroSchemaReflectClass=com.tom_e_white.javamagazine.model.Event
+  -Dcdk.avroSchemaReflectClass=com.tom_e_white.javamagazine.Event
 mvn cdk:create-dataset \
   -Dcdk.datasetName=summaries \
-  -Dcdk.avroSchemaReflectClass=com.tom_e_white.javamagazine.model.Summary
+  -Dcdk.avroSchemaReflectClass=com.tom_e_white.javamagazine.Summary
 ```
 
 You can see the dataset directory hierarchy in [`/tmp/data/events`](http://localhost:8888/filebrowser/#/tmp/data/events),
