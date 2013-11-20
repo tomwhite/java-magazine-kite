@@ -1,0 +1,8 @@
+.classpath
+.settings
+.project
+target
+.surefire-*
+.DS_Store
+.idea
+*.iml
