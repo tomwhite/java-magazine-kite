@@ -1,13 +1,11 @@
 package com.tom_e_white.javamagazine;
 
-import java.io.Serializable;
 import org.apache.crunch.DoFn;
 import org.apache.crunch.Emitter;
 import org.apache.crunch.Pair;
 
 class MakeSummary extends
-    DoFn<Pair<Pair<Long, String>, Iterable<Event>>, Summary>
-    implements Serializable {
+    DoFn<Pair<Pair<Long, String>, Iterable<Event>>, Summary> {
   @Override
   public void process(
       Pair<Pair<Long, String>, Iterable<Event>> input,

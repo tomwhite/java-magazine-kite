@@ -19,7 +19,7 @@ public class GenerateSummaries extends CrunchTool {
         CrunchDatasets.asSource(eventsDataset, Event.class));
 
     PCollection<Summary> summaries = events
-        .by(new GetTimeBucket(),
+        .by(new GetTimeAndSourceBucket(),
             Avros.pairs(Avros.longs(), Avros.strings()))
         .groupByKey()
         .parallelDo(new MakeSummary(),
