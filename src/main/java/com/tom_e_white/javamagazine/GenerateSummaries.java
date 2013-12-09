@@ -1,12 +1,12 @@
 package com.tom_e_white.javamagazine;
 
-import com.cloudera.cdk.data.*;
-import com.cloudera.cdk.data.crunch.CrunchDatasets;
 import org.apache.crunch.PCollection;
 import org.apache.crunch.Target;
 import org.apache.crunch.types.avro.Avros;
 import org.apache.crunch.util.CrunchTool;
 import org.apache.hadoop.util.ToolRunner;
+import org.kitesdk.data.*;
+import org.kitesdk.data.crunch.CrunchDatasets;
 
 public class GenerateSummaries extends CrunchTool {
   @Override

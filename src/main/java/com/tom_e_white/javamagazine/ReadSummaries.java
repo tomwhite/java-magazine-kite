@@ -1,9 +1,9 @@
 package com.tom_e_white.javamagazine;
 
-import com.cloudera.cdk.data.Dataset;
-import com.cloudera.cdk.data.DatasetReader;
-import com.cloudera.cdk.data.DatasetRepositories;
-import com.cloudera.cdk.data.DatasetRepository;
+import org.kitesdk.data.Dataset;
+import org.kitesdk.data.DatasetReader;
+import org.kitesdk.data.DatasetRepositories;
+import org.kitesdk.data.DatasetRepository;
 
 public class ReadSummaries {
 

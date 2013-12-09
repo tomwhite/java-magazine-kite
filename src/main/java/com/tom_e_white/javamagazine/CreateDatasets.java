@@ -1,8 +1,8 @@
 package com.tom_e_white.javamagazine;
 
-import com.cloudera.cdk.data.DatasetDescriptor;
-import com.cloudera.cdk.data.DatasetRepositories;
-import com.cloudera.cdk.data.DatasetRepository;
+import org.kitesdk.data.DatasetDescriptor;
+import org.kitesdk.data.DatasetRepositories;
+import org.kitesdk.data.DatasetRepository;
 
 public class CreateDatasets {
 

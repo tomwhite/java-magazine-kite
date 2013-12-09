@@ -1,5 +1,5 @@
-Writing Big Data Applications with Hadoop and the CDK
-=====================================================
+Writing Big Data Applications with Hadoop and Kite
+==================================================
 
 The projects contains the code accompanying the article in
 Oracle's Java Magazine.
@@ -7,8 +7,8 @@ Oracle's Java Magazine.
 ## Pre-requisites
 
 Before running the code, first
-[set up a QuickStart VM](https://github.com/cloudera/cdk-examples#setting-up-the-quickstart-vm)
-and run through the pre-requisites for [configuring Flume](https://github.com/cloudera/cdk-examples/tree/master/logging#pre-requisites)
+[set up a QuickStart VM](https://github.com/kite-sdk/kite-examples#setting-up-the-quickstart-vm)
+and run through the pre-requisites for [configuring Flume](https://github.com/kite-sdk/kite-examples/tree/master/logging#pre-requisites)
 using the `flume.properties` file in *this* project.
 
 ## Running
@@ -29,12 +29,12 @@ mvn exec:java -Dexec.mainClass="com.tom_e_white.javamagazine.CreateDatasets" -De
 or
 
 ```bash
-mvn cdk:create-dataset \
-  -Dcdk.datasetName=events \
-  -Dcdk.avroSchemaReflectClass=com.tom_e_white.javamagazine.Event
-mvn cdk:create-dataset \
-  -Dcdk.datasetName=summaries \
-  -Dcdk.avroSchemaReflectClass=com.tom_e_white.javamagazine.Summary
+mvn kite:create-dataset \
+  -Dkite.datasetName=events \
+  -Dkite.avroSchemaReflectClass=com.tom_e_white.javamagazine.Event
+mvn kite:create-dataset \
+  -Dkite.datasetName=summaries \
+  -Dkite.avroSchemaReflectClass=com.tom_e_white.javamagazine.Summary
 ```
 
 If you have run the example before and you get an error saying
@@ -64,13 +64,13 @@ and remove the _.tmp_ extension.
 
 Let the program run for a minute or so, then wait until the
 last file no longer has the _.tmp_ extension. If you don't see
-new files, make sure you have followed the [Setting up the QuickStart VM](https://github.com/cloudera/cdk-examples#setting-up-the-quickstart-vm)
+new files, make sure you have followed the [Setting up the QuickStart VM](https://github.com/kite-sdk/kite-examples#setting-up-the-quickstart-vm)
 directions.
 
 The next step is to run the Crunch program, `GenerateSummaries`:
 
 ```bash
-mvn cdk:run-tool -Dcdk.args="repo:hive"
+mvn kite:run-tool -Dkite.args="repo:hive"
 ```
 
 Read the summaries from Java:
@@ -102,7 +102,7 @@ mvn exec:java -Dexec.mainClass="com.tom_e_white.javamagazine.DeleteDatasets" -De
 or
 
 ```bash
-mvn cdk:delete-dataset -Dcdk.datasetName=events
-mvn cdk:delete-dataset -Dcdk.datasetName=summaries
+mvn kite:delete-dataset -Dkite.datasetName=events
+mvn kite:delete-dataset -Dkite.datasetName=summaries
 ```
 

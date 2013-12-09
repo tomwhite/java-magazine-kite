@@ -1,0 +1,6 @@
+<configuration>
+  <property>
+    <name>mapred.job.tracker</name>
+    <value>localhost.localdomain:8021</value>
+  </property>
+</configuration>

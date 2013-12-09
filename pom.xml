@@ -3,41 +3,41 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.tom-e-white</groupId>
-  <artifactId>java-magazine-cdk</artifactId>
+  <artifactId>java-magazine-kite</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
 
-  <name>java-magazine-cdk</name>
+  <name>java-magazine-kite</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <cdk-version>0.9.0-SNAPSHOT</cdk-version>
+    <kite-version>0.9.1-SNAPSHOT</kite-version>
   </properties>
 
   <dependencies>
 
     <dependency>
-      <groupId>com.cloudera.cdk</groupId>
-      <artifactId>cdk-data-core</artifactId>
-      <version>${cdk-version}</version>
+      <groupId>org.kitesdk</groupId>
+      <artifactId>kite-data-core</artifactId>
+      <version>${kite-version}</version>
     </dependency>
 
     <dependency>
-      <groupId>com.cloudera.cdk</groupId>
-      <artifactId>cdk-data-crunch</artifactId>
-      <version>${cdk-version}</version>
+      <groupId>org.kitesdk</groupId>
+      <artifactId>kite-data-crunch</artifactId>
+      <version>${kite-version}</version>
     </dependency>
 
     <dependency>
-      <groupId>com.cloudera.cdk</groupId>
-      <artifactId>cdk-data-flume</artifactId>
-      <version>${cdk-version}</version>
+      <groupId>org.kitesdk</groupId>
+      <artifactId>kite-data-flume</artifactId>
+      <version>${kite-version}</version>
     </dependency>
 
     <dependency>
-      <groupId>com.cloudera.cdk</groupId>
-      <artifactId>cdk-data-hcatalog</artifactId>
-      <version>${cdk-version}</version>
+      <groupId>org.kitesdk</groupId>
+      <artifactId>kite-data-hcatalog</artifactId>
+      <version>${kite-version}</version>
     </dependency>
 
     <dependency>
@@ -232,25 +232,11 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>com.cloudera.cdk</groupId>
-        <artifactId>cdk-maven-plugin</artifactId>
-        <version>${cdk-version}</version>
+        <groupId>org.kitesdk</groupId>
+        <artifactId>kite-maven-plugin</artifactId>
+        <version>${kite-version}</version>
         <configuration>
           <toolClass>com.tom_e_white.javamagazine.GenerateSummaries</toolClass>
-          <hadoopConfiguration>
-            <property>
-              <name>fs.default.name</name>
-              <value>hdfs://localhost.localdomain:8020</value>
-            </property>
-            <property>
-              <name>mapred.job.tracker</name>
-              <value>localhost.localdomain:8021</value>
-            </property>
-            <property>
-              <name>hive.metastore.uris</name>
-              <value>thrift://localhost:9083</value>
-            </property>
-          </hadoopConfiguration>
         </configuration>
       </plugin>
     </plugins>
