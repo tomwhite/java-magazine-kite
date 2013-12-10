@@ -11,7 +11,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <kite-version>0.9.1-SNAPSHOT</kite-version>
+    <kite-version>0.10.0</kite-version>
   </properties>
 
   <dependencies>

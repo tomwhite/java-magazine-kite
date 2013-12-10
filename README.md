@@ -45,7 +45,7 @@ datasets by running
 mvn exec:java -Dexec.mainClass="com.tom_e_white.javamagazine.DeleteDatasets" -Dexec.args="repo:hive"
 ```
 
-You can see the dataset directory hierarchy in [`/user/hive/warehouse/events`](http://localhost:8888/filebrowser/#/user/hive/warehouse//events),
+You can see the dataset directories in [`/user/hive/warehouse`](http://localhost:8888/filebrowser/#/user/hive/warehouse),
 
 Now we can run the application to do the logging.
 
